@@ -161,7 +161,7 @@ calculator.log();
 calculator.add(2, 3);
 ```
 
-When Node invokes that `require()` function with a local file path as the function’s only argument, Node goes through the following sequence of steps:
+When invoking `require()` function with a local file path as the function's only argument, Node goes through the following sequence of steps:
 
 1. **Resolving**: To find the absolute path of the file.
 1. **Loading**: To determine the type of the file content.
@@ -171,12 +171,7 @@ When Node invokes that `require()` function with a local file path as the functi
 
 ## Manual mocks (Jest)
 
-For testing
-// When you call require(), you don't get an instance of the module.
-// You get an object with references to the module's functions.
-// If you overwrite a value in the required module, your own reference is overwritten,
-// but the implementation keeps the original references
-
+### Manually Mock to create a testable files that contains local reference
 
 ## Resources
 
