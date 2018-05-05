@@ -84,34 +84,21 @@ Module {
 
 ## exports
 
-- `exports` is a reference to the `module.exports`, a convenience variable to help module authors write less code. Working with its properties is safe and recommended.
-
-For example:
+- `exports` is a **reference** to the `module.exports`, a convenience variable to help module authors write less code.
 
 ```javascript
 exports.add = add;
 
+// Identical to
+
 module.exports.add = add;
 ```
 
-Be aware:
+- Be aware
 
 ```javascript
-// Exported from require of module
-module.exports.add = add;
-
-// Not exported, only available in the module
+// Never exported, reference to module.exports is lost
 exports = { add };
-```
-
-- It is common practice to replace module.exports with custom functions or objects. If we do that but still would like to keep using the "exports" shorthand; then "exports" must be re-pointed to our new custom object:
-
-// TODO: write example why need to re-assign
-
-```javascript
-exports = module.exports = {}
-
-exports.method = function() {...}
 ```
 
 ## require()
