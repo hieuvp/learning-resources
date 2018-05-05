@@ -1,36 +1,59 @@
 # Modules
 
-## module Object
+## Table of Contents
 
-1. Simple calculator:
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-	```javascript
-	// calculator.js
-	
-	const add = (a, b) => a + b;
-	
-	module.exports.add = add;
-	```
 
-2. Node.js internally wraps all require()-ed modules in a function wrapper:
+- [The module wrapper](#the-module-wrapper)
+- [The module Object](#the-module-object)
+- [exports](#exports)
+- [require()](#require)
+- [Resources](#resources)
 
-	```javascript
-	(function (exports, require, module, __filename, __dirname) {
-	
-	  // calculator.js is actually executed here
-	  module.exports.add = (a, b) => a + b;
-	
-	});
-	```
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-3. Variable "**module**" is an object representing the current module. It is local to each module and it is also **private** (only accessible from module code):
+## The module wrapper
 
 ```javascript
-console.log(module);
+// calculator.js
 
+const add = (a, b) => a + b;
+
+module.exports.add = add;
+```
+
+Before a module's code is executed, Node.js will wrap it with a function wrapper that looks like the following:
+
+```javascript
+(function (exports, require, module, __filename, __dirname) {
+  // Module code actually lives in here
+
+  const add = (a, b) => a + b;
+
+  module.exports.add = add;
+});
+```
+
+## The module Object
+
+```javascript
+// calculator.js
+
+const add = (a, b) => a + b;
+
+module.exports.add = add;
+
+console.log(module);
+```
+
+When this module is called by `index.js`:
+
+```javascript
 Module {
   id: '/Volumes/Data/Workspace/Experiment/kafka/calculator.js',
-  exports: { add: [Function] },
+  exports: { add: [Function: add] },
   parent: 
    Module {
      id: '.',
@@ -60,49 +83,95 @@ Module {
 
 ## exports
 
-- `exports` is a reference to the `module.exports`, a convenience variable to help module authors write less code. Working with its properties is safe and recommended.
-
-For example:
+- `exports` is a **reference** to the `module.exports`, a convenience variable to help module authors write less code.
 
 ```javascript
 exports.add = add;
 
+// Identical to
+
 module.exports.add = add;
 ```
 
-Be aware:
+**Be aware**
 
 ```javascript
-// Exported from require of module
-module.exports.add = add;
+// Reference to "module.exports" is lost
+// Never exported
 
-// Not exported, only available in the module
 exports = { add };
 ```
 
-- It is common practice to replace module.exports with custom functions or objects. If we do that but still would like to keep using the "exports" shorthand; then "exports" must be re-pointed to our new custom object:
+## require()
 
-// TODO: write example why need to re-assign
+- A function that **takes** a `module name` or `path` and **returns** the `module.exports` object.
+
+**Examples**
 
 ```javascript
-exports = module.exports = {}
+const path = require('path');
 
-exports.method = function() {...}
+const calculator = require('./calculator');
 ```
 
-## require
+**Be aware**
 
-There is nothing special about require. It’s an object that acts mainly as a function that takes a module name or path and returns the module.exports object. We can simply override the require object with our own logic if we want to.
+```javascript
+// calculator.js
 
-For testing
-// When you call require(), you don't get an instance of the module.
-// You get an object with references to the module's functions.
-// If you overwrite a value in the required module, your own reference is overwritten,
-// but the implementation keeps the original references
+// Local logger
+const log = (a, b, sum) => {
+  console.log(`Calculator Logger ${a} + ${b} = ${sum}`);
+};
+
+const add = (a, b) => {
+  const sum = a + b;
+
+  // Invoke a local function
+  log(a, b, sum);
+
+  return sum;
+};
+
+module.exports = { log, add };
+```
+
+```javascript
+// index.js
+
+const calculator = require('./calculator');
+
+// Output: Calculator Logger 2 + 3 = 5
+calculator.add(2, 3);
+
+// Local logger function never been overridden
+// The require('./calculator') actually returns
+// module.exports = { log, add }
+calculator.log = () => {
+  console.log('New Logger');
+};
+
+// The calculator object got a new log function
+// Output: New Logger
+calculator.log();
+
+// But the local function is still keeping the origin
+// Output: Calculator Logger 2 + 3 = 5
+calculator.add(2, 3);
+```
+
+When invoking `require()` function with a local file path as the function's only argument, Node goes through the following sequence of steps:
+
+1. **Resolving**: to find the absolute path of the file.
+1. **Loading**: to determine the type of the file content.
+1. **[Wrapping](#the-module-wrapper)**: to give the file its private scope. This is what makes both the `require` and `module` objects local to every file we require.
+1. **Evaluating**: this is what the VM (Virtual Machine) eventually does with the loaded code.
+1. **Caching**: so that when we require this file again, we don't go over all the steps another time.
 
 ## Resources
 
 - [Node.js Documentation](https://nodejs.org/api/modules.html)
 - [Node.js module.exports vs. exports](https://medium.freecodecamp.org/node-js-module-exports-vs-exports-ec7e254d63ac)
 - [The Node.js Way - How `require()` Actually Works](http://fredkschott.com/post/2014/06/require-and-the-module-system/)
-
+- [Requiring modules in Node.js: Everything you need to know](https://medium.freecodecamp.org/requiring-modules-in-node-js-everything-you-need-to-know-e7fbd119be8)
+- 
