@@ -112,12 +112,15 @@ exports = { add };
 // calculator.js
 
 const log = (a, b, sum) => {
-  console.log(`Calculator Logger: ${a} + ${b} = ${sum}`);
+  console.log(`Calculator Logger ${a} + ${b} = ${sum}`);
 };
 
 const add = (a, b) => {
   const sum = a + b;
+
+  // Invoke a local function
   log(a, b, sum);
+
   return sum;
 };
 
@@ -129,7 +132,7 @@ module.exports = { log, add };
 
 const calculator = require('./calculator');
 
-// Calculator Logger: 2 + 3 = 5
+// Output: Calculator Logger 2 + 3 = 5
 calculator.add(2, 3);
 
 // Reason
@@ -137,10 +140,10 @@ calculator.log = () => {
   console.log('New Logger');
 };
 
-// New Logger
+// Output: New Logger
 calculator.log();
 
-// Calculator Logger: 2 + 3 = 5
+// Calculator Logger 2 + 3 = 5
 calculator.add(2, 3);
 ```
 
