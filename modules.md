@@ -1,5 +1,41 @@
 # Modules
 
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [The module wrapper](#the-module-wrapper)
+- [module Object](#module-object)
+- [exports](#exports)
+- [require](#require)
+- [Resources](#resources)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## The module wrapper
+
+```javascript
+// calculator.js
+
+const add = (a, b) => a + b;
+
+module.exports.add = add;
+```
+
+Node.js internally wraps all require()-ed modules in a function wrapper
+
+```javascript
+(function (exports, require, module, __filename, __dirname) {
+	// Module code actually lives in here
+	
+	const add = (a, b) => a + b;
+
+	module.exports.add = add;
+});
+```
+
 ## module Object
 
 1. Simple calculator:
