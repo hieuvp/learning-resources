@@ -105,13 +105,14 @@ exports = { add };
 
 ## require()
 
-- An object that acts mainly as a function that **takes** a `module name` or `path` and **returns** the `module.exports` object.
+- A function that **takes** a `module name` or `path` and **returns** the `module.exports` object.
 
 **Be aware**
 
 ```javascript
 // calculator.js
 
+// Local logger
 const log = (a, b, sum) => {
   console.log(`Calculator Logger ${a} + ${b} = ${sum}`);
 };
@@ -136,15 +137,18 @@ const calculator = require('./calculator');
 // Output: Calculator Logger 2 + 3 = 5
 calculator.add(2, 3);
 
-// Reason
+// Local logger function never overridden
+// The require('./calculator') actually returns module.exports = { log, add }
 calculator.log = () => {
   console.log('New Logger');
 };
 
+// The calculator object got a new function
 // Output: New Logger
 calculator.log();
 
-// Calculator Logger 2 + 3 = 5
+// But the local function is still keeping the original
+// Output: Calculator Logger 2 + 3 = 5
 calculator.add(2, 3);
 ```
 
