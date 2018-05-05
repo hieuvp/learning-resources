@@ -104,9 +104,9 @@ exports = { add };
 
 ## require()
 
-- An object that acts mainly as a function that takes a module name or path and returns the `module.exports` object.
+- An object that acts mainly as a function that **takes** a `module name` or `path` and **returns** the `module.exports` object.
 
-- When Node invokes that `require()` function with a local file path as the function’s only argument, Node goes through the following sequence of steps:
+When Node invokes that `require()` function with a local file path as the function’s only argument, Node goes through the following sequence of steps:
 
 1. **Resolving**: To find the absolute path of the file.
 1. **Loading**: To determine the type of the file content.
