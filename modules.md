@@ -104,7 +104,16 @@ exports = { add };
 
 ## require()
 
-There is nothing special about require. It’s an object that acts mainly as a function that takes a module name or path and returns the module.exports object. We can simply override the require object with our own logic if we want to.
+- An object that acts mainly as a function that takes a module name or path and returns the `module.exports` object.
+
+- When Node invokes that `require()` function with a local file path as the function’s only argument, Node goes through the following sequence of steps:
+	1. **Resolving**: To find the absolute path of the file.
+	1. **Loading**: To determine the type of the file content.
+	1. **Wrapping**: To give the file its private scope. This is what makes both the `require` and `module` objects local to every file we require.
+	1. **Evaluating**: This is what the VM eventually does with the loaded code.
+	1. **Caching**: So that when we require this file again, we don’t go over all the steps another time.
+
+## Manual mocks (Jest)
 
 For testing
 // When you call require(), you don't get an instance of the module.
@@ -112,7 +121,6 @@ For testing
 // If you overwrite a value in the required module, your own reference is overwritten,
 // but the implementation keeps the original references
 
-## Manual mocks (Jest)
 
 ## Resources
 
