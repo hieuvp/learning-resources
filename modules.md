@@ -107,6 +107,14 @@ exports = { add };
 
 - A function that **takes** a `module name` or `path` and **returns** the `module.exports` object.
 
+**Examples**
+
+```javascript
+const path = require('path');
+
+const calculator = require('./calculator');
+```
+
 **Be aware**
 
 ```javascript
@@ -176,3 +184,4 @@ For testing
 - [Node.js module.exports vs. exports](https://medium.freecodecamp.org/node-js-module-exports-vs-exports-ec7e254d63ac)
 - [The Node.js Way - How `require()` Actually Works](http://fredkschott.com/post/2014/06/require-and-the-module-system/)
 - [Requiring modules in Node.js: Everything you need to know](https://medium.freecodecamp.org/requiring-modules-in-node-js-everything-you-need-to-know-e7fbd119be8)
+- [Manual Mocks](https://facebook.github.io/jest/docs/en/manual-mocks.html)
