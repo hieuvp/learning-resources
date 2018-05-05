@@ -10,7 +10,6 @@
 - [The module Object](#the-module-object)
 - [exports](#exports)
 - [require()](#require)
-- [Manual mocks (Jest)](#manual-mocks-jest)
 - [Resources](#resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -169,14 +168,10 @@ When invoking `require()` function with a local file path as the function's only
 1. **Evaluating**: this is what the VM (Virtual Machine) eventually does with the loaded code.
 1. **Caching**: so that when we require this file again, we don't go over all the steps another time.
 
-## Manual mocks (Jest)
-
-### Manually Mock to create a testable files that contains local reference
-
 ## Resources
 
 - [Node.js Documentation](https://nodejs.org/api/modules.html)
 - [Node.js module.exports vs. exports](https://medium.freecodecamp.org/node-js-module-exports-vs-exports-ec7e254d63ac)
 - [The Node.js Way - How `require()` Actually Works](http://fredkschott.com/post/2014/06/require-and-the-module-system/)
 - [Requiring modules in Node.js: Everything you need to know](https://medium.freecodecamp.org/requiring-modules-in-node-js-everything-you-need-to-know-e7fbd119be8)
-- [Manual Mocks](https://facebook.github.io/jest/docs/en/manual-mocks.html)
+- 
