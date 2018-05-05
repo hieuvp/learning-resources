@@ -24,7 +24,7 @@ const add = (a, b) => a + b;
 module.exports.add = add;
 ```
 
-Node.js internally wraps all require()-ed modules in a function wrapper
+Before a module's code is executed, Node.js will wrap it with a function wrapper that looks like the following:
 
 ```javascript
 (function (exports, require, module, __filename, __dirname) {
