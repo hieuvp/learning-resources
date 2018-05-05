@@ -7,9 +7,10 @@
 
 
 - [The module wrapper](#the-module-wrapper)
-- [module Object](#module-object)
+- [The module Object](#the-module-object)
 - [exports](#exports)
-- [require](#require)
+- [require()](#require)
+- [Manual mocks (Jest)](#manual-mocks-jest)
 - [Resources](#resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -36,7 +37,7 @@ Before a module's code is executed, Node.js will wrap it with a function wrapper
 });
 ```
 
-## module Object
+## The module Object
 
 1. Simple calculator:
 
@@ -126,7 +127,7 @@ exports = module.exports = {}
 exports.method = function() {...}
 ```
 
-## require
+## require()
 
 There is nothing special about require. It’s an object that acts mainly as a function that takes a module name or path and returns the module.exports object. We can simply override the require object with our own logic if we want to.
 
@@ -135,6 +136,8 @@ For testing
 // You get an object with references to the module's functions.
 // If you overwrite a value in the required module, your own reference is overwritten,
 // but the implementation keeps the original references
+
+## Manual mocks (Jest)
 
 ## Resources
 
