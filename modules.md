@@ -106,6 +106,44 @@ exports = { add };
 
 - An object that acts mainly as a function that **takes** a `module name` or `path` and **returns** the `module.exports` object.
 
+- Be aware
+
+```javascript
+// calculator.js
+
+const log = (a, b, sum) => {
+  console.log(`Calculator Logger: ${a} + ${b} = ${sum}`);
+};
+
+const add = (a, b) => {
+  const sum = a + b;
+  log(a, b, sum);
+  return sum;
+};
+
+module.exports = { log, add };
+```
+
+```javascript
+// index.js
+
+const calculator = require('./calculator');
+
+// Calculator Logger: 2 + 3 = 5
+calculator.add(2, 3);
+
+// Reason
+calculator.log = () => {
+  console.log('New Logger');
+};
+
+// New Logger
+calculator.log();
+
+// Calculator Logger: 2 + 3 = 5
+calculator.add(2, 3);
+```
+
 When Node invokes that `require()` function with a local file path as the function’s only argument, Node goes through the following sequence of steps:
 
 1. **Resolving**: To find the absolute path of the file.
