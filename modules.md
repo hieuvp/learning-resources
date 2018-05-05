@@ -39,35 +39,21 @@ Before a module's code is executed, Node.js will wrap it with a function wrapper
 
 ## The module Object
 
-1. Simple calculator:
+```javascript
+// calculator.js
+const add = (a, b) => a + b;
 
-	```javascript
-	// calculator.js
-	
-	const add = (a, b) => a + b;
-	
-	module.exports.add = add;
-	```
+module.exports.add = add;
 
-2. Node.js internally wraps all require()-ed modules in a function wrapper:
+console.log(module);
+```
 
-	```javascript
-	(function (exports, require, module, __filename, __dirname) {
-	
-	  // calculator.js is actually executed here
-	  module.exports.add = (a, b) => a + b;
-	
-	});
-	```
-
-3. Variable "**module**" is an object representing the current module. It is local to each module and it is also **private** (only accessible from module code):
+When this module is called by `index.js`:
 
 ```javascript
-console.log(module);
-
 Module {
   id: '/Volumes/Data/Workspace/Experiment/kafka/calculator.js',
-  exports: { add: [Function] },
+  exports: { add: [Function: add] },
   parent: 
    Module {
      id: '.',
