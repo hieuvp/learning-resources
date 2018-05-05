@@ -108,11 +108,11 @@ exports = { add };
 
 - When Node invokes that `require()` function with a local file path as the function’s only argument, Node goes through the following sequence of steps:
 
-	1. **Resolving**: To find the absolute path of the file.
-	1. **Loading**: To determine the type of the file content.
-	1. **Wrapping**: To give the file its private scope. This is what makes both the `require` and `module` objects local to every file we require.
-	1. **Evaluating**: This is what the VM eventually does with the loaded code.
-	1. **Caching**: So that when we require this file again, we don’t go over all the steps another time.
+1. **Resolving**: To find the absolute path of the file.
+1. **Loading**: To determine the type of the file content.
+1. **Wrapping**: To give the file its private scope. This is what makes both the `require` and `module` objects local to every file we require.
+1. **Evaluating**: This is what the VM eventually does with the loaded code.
+1. **Caching**: So that when we require this file again, we don’t go over all the steps another time.
 
 ## Manual mocks (Jest)
 
