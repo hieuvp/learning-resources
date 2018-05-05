@@ -137,17 +137,18 @@ const calculator = require('./calculator');
 // Output: Calculator Logger 2 + 3 = 5
 calculator.add(2, 3);
 
-// Local logger function never overridden
-// The require('./calculator') actually returns module.exports = { log, add }
+// Local logger function never been overridden
+// The require('./calculator') actually returns
+// module.exports = { log, add }
 calculator.log = () => {
   console.log('New Logger');
 };
 
-// The calculator object got a new function
+// The calculator object got a new log function
 // Output: New Logger
 calculator.log();
 
-// But the local function is still keeping the original
+// But the local function is still keeping the origin
 // Output: Calculator Logger 2 + 3 = 5
 calculator.add(2, 3);
 ```
