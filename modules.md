@@ -94,7 +94,7 @@ exports.add = add;
 module.exports.add = add;
 ```
 
-- Be aware
+**Be aware**
 
 ```javascript
 // Never exported, reference to module.exports is lost
@@ -106,7 +106,7 @@ exports = { add };
 
 - An object that acts mainly as a function that **takes** a `module name` or `path` and **returns** the `module.exports` object.
 
-- Be aware
+**Be aware**
 
 ```javascript
 // calculator.js
