@@ -98,6 +98,7 @@ module.exports.add = add;
 
 ```javascript
 // Never exported, reference to module.exports is lost
+
 exports = { add };
 ```
 
