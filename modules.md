@@ -28,11 +28,11 @@ Before a module's code is executed, Node.js will wrap it with a function wrapper
 
 ```javascript
 (function (exports, require, module, __filename, __dirname) {
-	// Module code actually lives in here
-	
-	const add = (a, b) => a + b;
+  // Module code actually lives in here
 
-	module.exports.add = add;
+  const add = (a, b) => a + b;
+
+  module.exports.add = add;
 });
 ```
 
