@@ -41,6 +41,7 @@ Before a module's code is executed, Node.js will wrap it with a function wrapper
 
 ```javascript
 // calculator.js
+
 const add = (a, b) => a + b;
 
 module.exports.add = add;
