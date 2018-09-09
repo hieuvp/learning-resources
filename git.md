@@ -2,7 +2,7 @@
 
 [**Rebasing**](https://git-scm.com/docs/git-rebase) is the process of moving or combining a sequence of commits to a new base commit.
 
-<img src="images/09-2018/git-rebase.svg" width="500">
+<img src="images/09-2018/git-rebase.svg" width="700">
 
 ## Continuous Integration
 
