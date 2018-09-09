@@ -1,6 +1,6 @@
 ## Macdown
 
-```
+```bash
 macdown filename.md
 ```
 
