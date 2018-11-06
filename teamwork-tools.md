@@ -5,10 +5,14 @@
 
 1. **List of Operations**: `.`
 	- Create sub-task
-	- And more
+	- And more ...
 
 1. **Search**: `/`
 1. **Create Issue**: `c`
+1. **Assign To Me**: `i`
+1. **Assign Issue**: `a`
+1. **Edit Issue**: `e`
+1. **Comment on Issue**: `m`
 
 
 # Confluence
