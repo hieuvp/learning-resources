@@ -1,7 +1,7 @@
 # Jira
 > Jira Software combines development tools with agile features to help teams build world-class software.
 
-### Most Useful Keyboard Shortcuts
+#### Most Useful Keyboard Shortcuts
 
 1. **List of Operations**: `.`
 	- Create sub-task
