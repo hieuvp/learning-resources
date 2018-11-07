@@ -16,6 +16,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+
 ## macOS
 
 ### Screenshot
@@ -31,11 +32,15 @@
 
 - **Search Bookmarks**: Put a star `*` before Awesome Bar terms to search for those terms among your bookmarks.
 
+### Atom
+
+- **Open link**: **Control** (⌃) + **Shift** (⇧) + **O**
+
 ### VLC
 
 - **Chromecast**: Playback > Renderer
 - **Subtitle**: Extensions > VLsub
-- **Screenshot**: **Command** + **Option** + **S**
+- **Screenshot**: **Command** (⌘) + **Option** (⌥) + **S**
 
 
 ## Command Line Tools
