@@ -1,4 +1,4 @@
-# Software
+# Softwares
 
 ## Table of Contents
 
@@ -8,10 +8,10 @@
 
 - [macOS](#macos)
   - [Screenshot](#screenshot)
-- [Application](#application)
+- [Applications](#applications)
   - [Firefox](#firefox)
   - [VLC](#vlc)
-- [Command Line](#command-line)
+- [Command Line Tools](#command-line-tools)
   - [SDKMAN](#sdkman)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -25,7 +25,7 @@
 	- Then **Command** (⌘) + **V** to paste
 
 
-## Application
+## Applications
 
 ### Firefox
 
@@ -38,7 +38,7 @@
 - **Screenshot**: **Command** + **Option** + **S**
 
 
-## Command Line
+## Command Line Tools
 
 ### SDKMAN
 
