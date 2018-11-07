@@ -10,6 +10,7 @@
   - [Screenshot](#screenshot)
 - [Applications](#applications)
   - [Firefox](#firefox)
+  - [Atom](#atom)
   - [VLC](#vlc)
 - [Command Line Tools](#command-line-tools)
   - [SDKMAN](#sdkman)
