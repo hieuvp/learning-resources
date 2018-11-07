@@ -20,7 +20,7 @@
 
 ### Screenshot
 
-- **Entire Screen**: **Shift** (⇧) + **Command** (⌘) + **3**
+- **Entire Screen** to **File**: **Shift** (⇧) + **Command** (⌘) + **3**
 - **Selection** to **Clipboard**: **Control** (⌃) + **Shift** (⇧) + **Command** (⌘) + **4**
 	- Then **Command** (⌘) + **V** to paste
 
@@ -29,7 +29,7 @@
 
 ### Firefox
 
-- **Bookmark Search**: Put a star `*` before Awesome Bar terms to search for those terms among your bookmarks.
+- **Search Bookmarks**: Put a star `*` before Awesome Bar terms to search for those terms among your bookmarks.
 
 ### VLC
 
