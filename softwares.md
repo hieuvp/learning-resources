@@ -31,7 +31,7 @@
 
 ### Firefox
 
-- **Search Bookmarks**: Put a star **`*`** before Awesome Bar terms to search for those terms among your bookmarks.
+- **Search Bookmarks**: Put a star **`*`** before **Awesome Bar** terms to search for those terms among your bookmarks.
 
 - **Force to Remember `Logins & Passwords`**
 	- Use the **`Inspector`**: **Option** (⌥) + **Command** (⌘) + **C**
