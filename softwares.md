@@ -33,6 +33,12 @@
 
 - **Search Bookmarks**: Put a star `*` before Awesome Bar terms to search for those terms among your bookmarks.
 
+- **Force to Remember `Logins & Passwords`**
+	- Use the **`Inspector`**
+	- Make sure that the username and password elements are in a `<form>` tag. If they're not already then put a `<form>` tag around them.
+	- You will need to put a `<input type=submit>` button in the `<form>`.
+	- Clicking on the Submit button should get Firefox to offer to save the password.
+
 ### Atom
 
 - **Open link**: **Control** (⌃) + **Shift** (⇧) + **O**
