@@ -33,7 +33,7 @@
 
 - **Search Bookmarks**: Put a star **`*`** before **Awesome Bar** terms to search for those terms among your bookmarks.
 
-- **Force to Remember `Logins & Passwords`**
+- **Force to remember `Logins & Passwords`**
 	- Use the **`Inspector`**: **Option** (⌥) + **Command** (⌘) + **C**
 	- Make sure that the **Username** and **Password** elements are wrapped in a `<form>`, if not then put a `<form>` tag around them.
 	- You will need to put a `<input type=submit>` button in the `<form>`.
