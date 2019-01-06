@@ -36,8 +36,8 @@
 - **Force to remember `Logins & Passwords`**
 	- Use the **`Inspector`**: **Option** (⌥) + **Command** (⌘) + **C**
 	- Make sure that the **Username** and **Password** elements are wrapped inside a `<form>`, if not then put a `<form>` tag around them.
-	- You will need to put a `<input type="submit" value="Submit">` button inside the `<form>`.
-	- Click on the **Submit** button should get **Firefox** to offer to **Save The Login**.
+	- You will need to put an `<input type="submit" value="Submit">` button inside the `<form>`.
+	- Click on the **Submit** button should get **Firefox** to offer a **Save The Login**.
 
 ### Atom
 
